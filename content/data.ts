@@ -6,10 +6,11 @@ export type SkillGroup = {
 export const PROFILE = {
   name: "Abdulmalik Bajandouh",
   role: "AI Product Builder",
+  bio: "I build AI products end-to-end — turning AI and automation into polished tools people actually use. Graduated in Data Science from Umm Al-Qura University.",
   education: "B.Sc. in Data Science",
   university: "Umm Al-Qura University",
-  location: "Makkah, Saudi Arabia",
-  tags: ["AI Products", "Automation", "Data Science"],
+  location: "Saudi Arabia",
+  tags: ["AI Products", "AI Solutions", "Automation"],
 };
 
 export const SKILL_GROUPS: SkillGroup[] = [

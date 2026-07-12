@@ -14,7 +14,7 @@ import { ChatBubbleRow } from "@/components/chat/chat-bubble";
 import { CONTACT, FUN_BLURB, PROFILE, PROJECTS, SKILL_GROUPS } from "@/content/data";
 
 const CHIPS = [
-  { label: "Me", icon: User, question: "Tell me about yourself", reply: "I’m Abdulmalik, a Data Science graduate and AI Product Builder with a passion for turning data, AI, and ambitious ideas into useful, polished products. I enjoy exploring emerging technologies, building practical automation, and solving real-world problems through thoughtful end-to-end experiences — from the underlying data and models to the interface people actually use. My goal is simple: create intelligent tools that are clear, valuable, and genuinely helpful." },
+  { label: "Me", icon: User, question: "Tell me about yourself", reply: "" },
   { label: "Projects", icon: Briefcase, question: "What have you built?", reply: "I've built a few things I'm really proud of! Take a look:", toolName: "getProjects", output: { projects: PROJECTS } },
   { label: "Skills", icon: Sparkles, question: "What are your skills?", reply: "Here are the tools and areas I work with most:", toolName: "getSkills", output: { groups: SKILL_GROUPS } },
   { label: "Contact", icon: Mail, question: "How can I reach you?", reply: "I'd be happy to connect. Here's where you can find me:", toolName: "getContact", output: { contact: CONTACT } },
