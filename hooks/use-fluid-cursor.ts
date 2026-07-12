@@ -10,14 +10,14 @@ const createFluidCursor = () => {
   let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1440,
-    CAPTURE_RESOLUTION: 512,
+    CAPTURE_RESOLUTION: 1512,
     DENSITY_DISSIPATION: 0.5,
     VELOCITY_DISSIPATION: 3,
     PRESSURE: 0.1,
     PRESSURE_ITERATIONS: 20,
     CURL: 3,
-    SPLAT_RADIUS: 0.1,
-    SPLAT_FORCE: 3000,
+    SPLAT_RADIUS: 0.2,
+    SPLAT_FORCE: 6000,
     SHADING: true,
     COLOR_UPDATE_SPEED: 10,
     PAUSED: false,
@@ -832,6 +832,16 @@ const createFluidCursor = () => {
     splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
   }
 
+  function clickSplat(pointer) {
+    const color = generateColor();
+    color.r *= 10.0;
+    color.g *= 10.0;
+    color.b *= 10.0;
+    const dx = 10 * (Math.random() - 0.5);
+    const dy = 30 * (Math.random() - 0.5);
+    splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
+  }
+
   function splat(x, y, dx, dy, color) {
     splatProgram.bind();
     gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
@@ -859,6 +869,7 @@ const createFluidCursor = () => {
     let posX = scaleByPixelRatio(e.clientX);
     let posY = scaleByPixelRatio(e.clientY);
     updatePointerDownData(pointer, -1, posX, posY);
+    clickSplat(pointer);
   }
 
   let firstMove = true;
@@ -945,13 +956,10 @@ const createFluidCursor = () => {
   }
 
   function generateColor() {
-    // A narrow gold range keeps the cursor effect warm and refined instead of
-    // cycling through unrelated colors.
-    const hue = 0.11 + Math.random() * 0.03;
-    let c = HSVtoRGB(hue, 0.78, 1.0);
-    c.r *= 0.16;
-    c.g *= 0.16;
-    c.b *= 0.16;
+    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+    c.r *= 0.15;
+    c.g *= 0.15;
+    c.b *= 0.15;
     return c;
   }
 
