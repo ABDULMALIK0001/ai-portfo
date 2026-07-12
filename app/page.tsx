@@ -98,15 +98,6 @@ export default function Home() {
             <X className="h-4 w-4" />
           </motion.button>
         )}
-        {!isChatting && (
-          <button
-            type="button"
-            onClick={handleGoHome}
-            className="font-heading text-[15px] font-bold tracking-tight"
-          >
-            Abdulmalik
-          </button>
-        )}
       </header>
 
       <main className="relative z-10 flex min-h-0 flex-1 flex-col">
