@@ -121,16 +121,16 @@ export default function Home() {
             >
               <motion.button
                 initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.5 }}
+                animate={{ opacity: 1, y: [0, -10, 0] }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
                 type="button"
                 onClick={() => handleQuickReply(CHIPS[0])}
                 aria-label="Learn more about Abdulmalik"
-                className="order-3 mt-8 h-40 w-40 cursor-pointer overflow-hidden rounded-3xl border border-border bg-surface shadow-sm transition-shadow hover:shadow-lg sm:h-52 sm:w-52"
+                className="order-3 mt-8 h-56 w-56 cursor-pointer overflow-hidden rounded-full sm:h-72 sm:w-72"
               >
-                <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={208} height={208} className="h-full w-full object-cover" priority />
+                <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-cover" priority />
               </motion.button>
 
               <motion.h1
