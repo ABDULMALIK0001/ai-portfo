@@ -122,9 +122,9 @@ export default function Home() {
                   type="button"
                   onClick={() => handleQuickReply(CHIPS[0])}
                   aria-label="Learn more about Abdulmalik"
-                  className="h-56 w-56 cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-white/20 shadow-sm backdrop-blur-md sm:h-72 sm:w-72"
+                  className="h-56 w-56 cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-white/20 p-3 shadow-sm backdrop-blur-md sm:h-72 sm:w-72"
                 >
-                  <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-cover" priority />
+                  <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-contain" priority />
                 </motion.button>
               </motion.div>
 
