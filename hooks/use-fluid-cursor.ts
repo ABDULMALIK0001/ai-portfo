@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment, prefer-const, @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/ban-ts-comment, prefer-const */
 // @ts-nocheck
 // Ported from https://github.com/toukoum/portfolio (src/hooks/use-FluidCursor.tsx),
 // itself based on PavelDoGreat/WebGL-Fluid-Simulation. Matches omarlebda.com's cursor effect.
@@ -336,11 +336,37 @@ const createFluidCursor = () => {
       uniform vec3 color;
       uniform vec2 point;
       uniform float radius;
+      uniform float angle;
+
+      vec2 rotatePoint(vec2 p, float a) {
+          float s = sin(a);
+          float c = cos(a);
+          return mat2(c, -s, s, c) * p;
+      }
+
+      float roundedBox(vec2 p, vec2 halfSize, float cornerRadius) {
+          vec2 d = abs(p) - halfSize;
+          return length(max(d, 0.0)) - cornerRadius;
+      }
+
+      float cursorMark(vec2 p) {
+          float head = length(p - vec2(0.0, 0.35)) - 0.18;
+          float body = roundedBox(p, vec2(0.22, 0.30), 0.05);
+          float leftArm = roundedBox(p - vec2(-0.30, 0.05), vec2(0.10, 0.06), 0.03);
+          float rightArm = roundedBox(p - vec2(0.30, 0.05), vec2(0.10, 0.06), 0.03);
+          float leftLeg = roundedBox(p - vec2(-0.10, -0.38), vec2(0.07, 0.12), 0.03);
+          float rightLeg = roundedBox(p - vec2(0.10, -0.38), vec2(0.07, 0.12), 0.03);
+          return min(head, min(body, min(leftArm, min(rightArm, min(leftLeg, rightLeg)))));
+      }
 
       void main () {
           vec2 p = vUv - point.xy;
           p.x *= aspectRatio;
-          vec3 splat = exp(-dot(p, p) / radius) * color;
+          float scale = sqrt(max(radius, 0.000001));
+          vec2 shapedPoint = rotatePoint(p, angle) / scale;
+          float mask = 1.0 - smoothstep(0.0, 0.08, cursorMark(shapedPoint));
+          float gaussian = exp(-dot(p, p) / radius);
+          vec3 splat = gaussian * mask * color;
           vec3 base = texture2D(uTarget, vUv).xyz;
           gl_FragColor = vec4(base + splat, 1.0);
       }
@@ -834,9 +860,9 @@ const createFluidCursor = () => {
 
   function clickSplat(pointer) {
     const color = generateColor();
-    color.r *= 10.0;
-    color.g *= 10.0;
-    color.b *= 10.0;
+    color.r *= 3.0;
+    color.g *= 3.0;
+    color.b *= 3.0;
     const dx = 10 * (Math.random() - 0.5);
     const dy = 30 * (Math.random() - 0.5);
     splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
@@ -849,6 +875,7 @@ const createFluidCursor = () => {
     gl.uniform2f(splatProgram.uniforms.point, x, y);
     gl.uniform3f(splatProgram.uniforms.color, dx, dy, 0.0);
     gl.uniform1f(splatProgram.uniforms.radius, correctRadius(config.SPLAT_RADIUS / 100.0));
+    gl.uniform1f(splatProgram.uniforms.angle, Math.atan2(dy, dx));
     blit(velocity.write);
     velocity.swap();
 
@@ -956,43 +983,7 @@ const createFluidCursor = () => {
   }
 
   function generateColor() {
-    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-    c.r *= 0.15;
-    c.g *= 0.15;
-    c.b *= 0.15;
-    return c;
-  }
-
-  function HSVtoRGB(h, s, v) {
-    let r, g, b, i, f, p, q, t;
-    i = Math.floor(h * 6);
-    f = h * 6 - i;
-    p = v * (1 - s);
-    q = v * (1 - f * s);
-    t = v * (1 - (1 - f) * s);
-
-    switch (i % 6) {
-      case 0:
-        (r = v), (g = t), (b = p);
-        break;
-      case 1:
-        (r = q), (g = v), (b = p);
-        break;
-      case 2:
-        (r = p), (g = v), (b = t);
-        break;
-      case 3:
-        (r = p), (g = q), (b = v);
-        break;
-      case 4:
-        (r = t), (g = p), (b = v);
-        break;
-      case 5:
-        (r = v), (g = p), (b = q);
-        break;
-    }
-
-    return { r, g, b };
+    return { r: 0.0, g: 0.6, b: 0.9 };
   }
 
   function wrap(value, min, max) {

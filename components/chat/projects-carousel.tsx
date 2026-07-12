@@ -39,9 +39,9 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
               <img
                 src={p.coverImage.src}
                 alt={p.coverImage.alt}
-                width={80}
-                height={80}
-                className="h-20 w-20 rounded-[18px] shadow-md transition-transform duration-300 group-hover:scale-105"
+                width={112}
+                height={112}
+                className="h-28 w-28 rounded-[25px] shadow-lg transition-transform duration-300 group-hover:scale-[1.04]"
               />
             </div>
             <div className="flex flex-1 flex-col gap-2 p-4">
