@@ -111,9 +111,6 @@ export default function Home() {
               className="flex flex-1 flex-col items-center justify-center px-4 pb-16 sm:px-6 sm:pb-24"
             >
               <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: [0, -12, 0] }}
-                transition={{ y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
                 className="order-3 mt-8"
               >
                 <motion.button
@@ -124,40 +121,48 @@ export default function Home() {
                   aria-label="Learn more about Abdulmalik"
                   className="h-56 w-56 cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-white/20 p-3 shadow-sm backdrop-blur-md sm:h-72 sm:w-72"
                 >
-                  <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-contain" priority />
+                  <Image
+                    src="/avatar.png"
+                    alt="Abdulmalik Bajandouh"
+                    width={288}
+                    height={288}
+                    className="h-full w-full object-contain"
+                    preload
+                    unoptimized
+                  />
                 </motion.button>
               </motion.div>
 
               <motion.h1
-                initial={false}
+                initial={{ opacity: 0, y: -60 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.08 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 className="order-1 text-center text-lg font-medium text-foreground sm:text-xl"
               >
                 Hey, I&apos;m Abdulmalik 👋
               </motion.h1>
               <motion.p
-                initial={false}
+                initial={{ opacity: 0, y: -60 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.14 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 className="order-2 mt-1 text-center font-heading text-5xl font-bold tracking-tight text-foreground sm:text-6xl"
               >
                 AI Portfolio
               </motion.p>
 
               <motion.div
-                initial={false}
+                initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="order-4 mt-7 w-full max-w-[500px]"
               >
                 <MessageInput onSend={handleSend} onStop={stop} isStreaming={isStreaming} />
               </motion.div>
 
               <motion.div
-                initial={false}
+                initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.26 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="order-5 mt-5 flex flex-wrap justify-center gap-2"
               >
                 {CHIPS.map((c) => (
