@@ -110,19 +110,23 @@ export default function Home() {
               transition={{ duration: 0.3 }}
               className="flex flex-1 flex-col items-center justify-center px-4 pb-16 sm:px-6 sm:pb-24"
             >
-              <motion.button
+              <motion.div
                 initial={false}
-                animate={{ opacity: 1, y: [0, -10, 0] }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
-                type="button"
-                onClick={() => handleQuickReply(CHIPS[0])}
-                aria-label="Learn more about Abdulmalik"
-                className="order-3 mt-8 h-56 w-56 cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-white/20 shadow-sm backdrop-blur-md sm:h-72 sm:w-72"
+                animate={{ opacity: 1, y: [0, -12, 0] }}
+                transition={{ y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
+                className="order-3 mt-8"
               >
-                <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-cover" priority />
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  type="button"
+                  onClick={() => handleQuickReply(CHIPS[0])}
+                  aria-label="Learn more about Abdulmalik"
+                  className="h-56 w-56 cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-white/20 shadow-sm backdrop-blur-md sm:h-72 sm:w-72"
+                >
+                  <Image src="/avatar.png" alt="Abdulmalik Bajandouh" width={288} height={288} className="h-full w-full object-cover" priority />
+                </motion.button>
+              </motion.div>
 
               <motion.h1
                 initial={false}

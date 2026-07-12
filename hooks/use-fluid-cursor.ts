@@ -885,6 +885,29 @@ const createFluidCursor = () => {
   document.body.addEventListener("mousemove", handleFirstMouseMove);
   window.addEventListener("mousemove", handleMouseMove);
 
+  function handleTouchStart(e) {
+    const touches = e.targetTouches;
+    const pointer = pointers[0];
+    for (let i = 0; i < touches.length; i++) {
+      const posX = scaleByPixelRatio(touches[i].clientX);
+      const posY = scaleByPixelRatio(touches[i].clientY);
+      updatePointerDownData(pointer, touches[i].identifier, posX, posY);
+    }
+  }
+
+  function handleTouchMove(e) {
+    const touches = e.targetTouches;
+    const pointer = pointers[0];
+    for (let i = 0; i < touches.length; i++) {
+      const posX = scaleByPixelRatio(touches[i].clientX);
+      const posY = scaleByPixelRatio(touches[i].clientY);
+      updatePointerMoveData(pointer, posX, posY, pointer.color);
+    }
+  }
+
+  window.addEventListener("touchstart", handleTouchStart, { passive: true });
+  window.addEventListener("touchmove", handleTouchMove, { passive: true });
+
   function updatePointerDownData(pointer, id, posX, posY) {
     pointer.id = id;
     pointer.down = true;
@@ -1003,6 +1026,8 @@ const createFluidCursor = () => {
     window.removeEventListener("mousedown", handleMouseDown);
     document.body.removeEventListener("mousemove", handleFirstMouseMove);
     window.removeEventListener("mousemove", handleMouseMove);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchmove", handleTouchMove);
   };
 };
 
