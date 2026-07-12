@@ -34,13 +34,14 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
             transition={{ duration: 0.3, delay: i * 0.06 }}
             className="group flex w-[min(280px,calc(100vw-5.5rem))] shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-surface text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:w-[280px]"
           >
-            <div className="relative h-36 w-full overflow-hidden bg-surface-soft">
-              <Image
+            <div className="relative flex h-36 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-surface-soft to-surface">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={p.coverImage.src}
                 alt={p.coverImage.alt}
-                fill
-                className="object-cover"
-                sizes="280px"
+                width={80}
+                height={80}
+                className="h-20 w-20 rounded-[18px] shadow-md transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="flex flex-1 flex-col gap-2 p-4">

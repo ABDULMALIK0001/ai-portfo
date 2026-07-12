@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "Streamlit",
       "Model Deployment",
     ],
-    coverImage: { src: "/projects/vitavision-cover.png", alt: "VitaVision project cover" },
+    coverImage: { src: "/projects/vitavision-logo.svg", alt: "VitaVision project logo" },
     images: [{ src: "/projects/vitavision-1.png", alt: "VitaVision app screenshot" }],
   },
   {
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
       "REST API",
       "Tailwind CSS",
     ],
-    coverImage: { src: "/projects/resume-analyzer-cover.png", alt: "AI Resume Analyzer project cover" },
+    coverImage: { src: "/projects/resume-analyzer-logo.svg", alt: "AI Resume Analyzer project logo" },
     images: [{ src: "/projects/resume-analyzer-1.png", alt: "AI Resume Analyzer screenshot" }],
   },
   {
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
       "Citations",
       "Gemini",
     ],
-    coverImage: { src: "/projects/chat-with-pdf-cover.png", alt: "Chat with your PDF project cover" },
+    coverImage: { src: "/projects/chat-with-pdf-logo.svg", alt: "Chat with your PDF project logo" },
     images: [{ src: "/projects/chat-with-pdf-1.png", alt: "Chat with your PDF screenshot" }],
   },
   {
@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
       "Docker Compose",
       "CI/CD",
     ],
-    coverImage: { src: "/projects/jobtrack-cover.png", alt: "JobTrack project cover" },
+    coverImage: { src: "/projects/jobtrack-logo.svg", alt: "JobTrack project logo" },
     images: [{ src: "/projects/jobtrack-1.png", alt: "JobTrack app screenshot" }],
   },
 ];
