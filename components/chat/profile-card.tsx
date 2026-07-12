@@ -20,7 +20,7 @@ export function ProfileCard({ profile }: { profile: typeof PROFILE }) {
           <p className="mt-0.5 text-[12.5px] text-primary">{profile.role}</p>
         </div>
       </div>
-      <p className="mt-3 text-[12.5px] leading-relaxed text-foreground">{profile.bio}</p>
+      <p className="mt-3 whitespace-pre-line text-[12.5px] leading-relaxed text-foreground">{profile.bio}</p>
       <div className="mt-4 space-y-2 text-[12.5px] text-muted-foreground">
         <div className="flex items-center gap-2"><GraduationCap className="h-4 w-4 shrink-0 text-primary" /><span>{profile.education} · {profile.university}</span></div>
         <div className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0 text-primary" /><span>{profile.location}</span></div>
