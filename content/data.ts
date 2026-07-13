@@ -93,7 +93,9 @@ export const PROJECTS: Project[] = [
       "Model Deployment",
     ],
     coverImage: { src: "/projects/vitavision-logo.svg", alt: "VitaVision project logo" },
-    images: [{ src: "/projects/vitavision-1.png", alt: "VitaVision app screenshot" }],
+    images: [
+      { src: "/projects/vitavision-logo.svg", alt: "VitaVision — project logo" },
+    ],
   },
   {
     title: "AI Resume Analyzer",
@@ -112,8 +114,14 @@ export const PROJECTS: Project[] = [
       "REST API",
       "Tailwind CSS",
     ],
+    links: [{ name: "View on GitHub", url: "https://github.com/ABDULMALIK0001/ai-resume-analyzer" }],
     coverImage: { src: "/projects/resume-analyzer-logo.svg", alt: "AI Resume Analyzer project logo" },
-    images: [{ src: "/projects/resume-analyzer-1.png", alt: "AI Resume Analyzer screenshot" }],
+    images: [
+      { src: "/projects/resume-analyzer-landing.png", alt: "AI Resume Analyzer — upload page" },
+      { src: "/projects/resume-analyzer-results-score.png", alt: "AI Resume Analyzer — score & summary" },
+      { src: "/projects/resume-analyzer-results-analysis.png", alt: "AI Resume Analyzer — strengths & gaps" },
+      { src: "/projects/resume-analyzer-results-rewrites.png", alt: "AI Resume Analyzer — rewrite suggestions" },
+    ],
   },
   {
     title: "Chat with your PDF",
@@ -132,8 +140,13 @@ export const PROJECTS: Project[] = [
       "Citations",
       "Gemini",
     ],
+    links: [{ name: "View on GitHub", url: "https://github.com/ABDULMALIK0001/chat-with-pdf" }],
     coverImage: { src: "/projects/chat-with-pdf-logo.svg", alt: "Chat with your PDF project logo" },
-    images: [{ src: "/projects/chat-with-pdf-1.png", alt: "Chat with your PDF screenshot" }],
+    images: [
+      { src: "/projects/chat-with-pdf-landing.png", alt: "Chat with your PDF — upload page" },
+      { src: "/projects/chat-with-pdf-chat-empty.png", alt: "Chat with your PDF — chat interface with suggestions" },
+      { src: "/projects/chat-with-pdf-chat-response.png", alt: "Chat with your PDF — AI response with citations" },
+    ],
   },
   {
     title: "JobTrack",
@@ -154,8 +167,11 @@ export const PROJECTS: Project[] = [
       "Docker Compose",
       "CI/CD",
     ],
+    links: [{ name: "View on GitHub", url: "https://github.com/ABDULMALIK0001/jobtrack" }],
     coverImage: { src: "/projects/jobtrack-logo.svg", alt: "JobTrack project logo" },
-    images: [{ src: "/projects/jobtrack-1.png", alt: "JobTrack app screenshot" }],
+    images: [
+      { src: "/projects/jobtrack-logo.svg", alt: "JobTrack — project logo" },
+    ],
   },
 ];
 
