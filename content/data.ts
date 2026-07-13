@@ -94,7 +94,8 @@ export const PROJECTS: Project[] = [
     ],
     coverImage: { src: "/projects/vitavision-logo.svg", alt: "VitaVision project logo" },
     images: [
-      { src: "/projects/vitavision-logo.svg", alt: "VitaVision — project logo" },
+      { src: "/projects/vitavision-1.png", alt: "VitaVision welcome screen" },
+      { src: "/projects/vitavision-2.png", alt: "VitaVision analysis results" },
     ],
   },
   {
@@ -118,9 +119,7 @@ export const PROJECTS: Project[] = [
     coverImage: { src: "/projects/resume-analyzer-logo.svg", alt: "AI Resume Analyzer project logo" },
     images: [
       { src: "/projects/resume-analyzer-landing.png", alt: "AI Resume Analyzer — upload page" },
-      { src: "/projects/resume-analyzer-results-score.png", alt: "AI Resume Analyzer — score & summary" },
       { src: "/projects/resume-analyzer-results-analysis.png", alt: "AI Resume Analyzer — strengths & gaps" },
-      { src: "/projects/resume-analyzer-results-rewrites.png", alt: "AI Resume Analyzer — rewrite suggestions" },
     ],
   },
   {
@@ -144,7 +143,6 @@ export const PROJECTS: Project[] = [
     coverImage: { src: "/projects/chat-with-pdf-logo.svg", alt: "Chat with your PDF project logo" },
     images: [
       { src: "/projects/chat-with-pdf-landing.png", alt: "Chat with your PDF — upload page" },
-      { src: "/projects/chat-with-pdf-chat-empty.png", alt: "Chat with your PDF — chat interface with suggestions" },
       { src: "/projects/chat-with-pdf-chat-response.png", alt: "Chat with your PDF — AI response with citations" },
     ],
   },

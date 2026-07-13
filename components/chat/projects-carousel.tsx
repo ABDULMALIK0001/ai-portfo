@@ -53,7 +53,7 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
       </div>
 
       <Dialog open={!!active} onOpenChange={(open) => !open && setActive(null)}>
-        <DialogContent className="max-h-[90vh] w-[calc(100%-1.5rem)] max-w-3xl overflow-y-auto rounded-2xl border-border bg-surface sm:w-full">
+        <DialogContent className="max-h-[92vh] w-[calc(100%-1.5rem)] max-w-5xl overflow-y-auto rounded-2xl border-border bg-surface sm:w-[calc(100%-3rem)] sm:max-w-5xl">
           {active && (
             <>
               <DialogHeader>
@@ -101,8 +101,15 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
                     App preview
                   </p>
                   {active.images.map((img) => (
-                    <div key={img.src} className="relative aspect-video overflow-hidden rounded-xl bg-surface-soft">
-                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 90vw, 720px" />
+                    <div key={img.src} className="overflow-hidden rounded-xl border border-border bg-surface-soft">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={1280}
+                        height={720}
+                        className="h-auto w-full"
+                        sizes="(max-width: 768px) 90vw, 720px"
+                      />
                     </div>
                   ))}
                 </div>
