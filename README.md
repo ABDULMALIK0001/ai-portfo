@@ -40,19 +40,12 @@ rebuilt from scratch on **Google Gemini** (free tier) instead of OpenAI.
 4. `npm install`
 5. `npm run dev` → open [http://localhost:3000](http://localhost:3000)
 
-## Before going live — TODO for the owner
+## Before going live
 
 - **Replace `public/avatar.png`** with a real photo/memoji — it's currently a
   placeholder.
-- **Replace the project cover images** in `public/projects/*.png` — they're
-  currently generated placeholder gradients, not real screenshots. Swap in
-  actual screenshots of VitaVision, AI Resume Analyzer, Chat with your PDF,
-  and JobTrack.
-- **Push the 3 local-only projects to GitHub** (Resume Analyzer, Chat-with-PDF,
-  JobTrack — VitaVision likely already has a repo) and add real links to
-  `content/data.ts` if you want "View on GitHub" / "Live" links on the cards.
-  Links are optional — the site works fine without them (write-up + images
-  carry the detail, like Omar's site).
+- Add final screenshots for VitaVision and JobTrack.
+- Add live demo links after the projects are deployed.
 - Set up Upstash for real rate limiting before deploying publicly (see Setup).
 
 ## Tech stack
