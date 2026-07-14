@@ -168,7 +168,6 @@ export const PROJECTS: Project[] = [
     links: [{ name: "View on GitHub", url: "https://github.com/ABDULMALIK0001/jobtrack" }],
     coverImage: { src: "/projects/jobtrack-logo.svg", alt: "JobTrack project logo" },
     images: [
-      { src: "/projects/jobtrack-1.png", alt: "JobTrack landing page" },
       { src: "/projects/jobtrack-dashboard.png", alt: "JobTrack Kanban application dashboard" },
     ],
   },
