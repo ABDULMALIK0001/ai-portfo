@@ -92,6 +92,7 @@ export const PROJECTS: Project[] = [
       "Streamlit",
       "Model Deployment",
     ],
+    links: [{ name: "View on GitHub", url: "https://github.com/ABDULMALIK0001/VitaVision_Project" }],
     coverImage: { src: "/projects/vitavision-logo.svg", alt: "VitaVision project logo" },
     images: [
       { src: "/projects/vitavision-1.png", alt: "VitaVision welcome screen" },
